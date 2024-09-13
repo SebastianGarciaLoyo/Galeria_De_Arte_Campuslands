@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galería de Arte</title>
+  <link rel="stylesheet" href="/Css/galeria.css">
+  <script src="/JavaScript/script.js" defer></script>
+</head>
+<body>
+
+  <!-- Contenedor para el título y la barra de navegación -->
+  <header class="header">
+    <h1 class="title">CampusLands Museum of Art</h1>
+
+    <!-- Botón para el menú desplegable -->
+    <button class="menu-toggle" aria-label="Menu">
+        ☰
+    </button>
+
+    <!-- Barra de Navegación -->
+    <nav class="navbar">
+      <ul class="nav-menu">
+        <li class="button-85"><a href="#">Exhibitions</a></li>
+        <li class="button-85"><a href="#">Gallery</a></li>
+        <li class="button-85"><a href="#">Events</a></li>
+        <li class="button-85"><a href="#">Visit</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Introducción a la galería -->
+  <div class="inicio">
+    <h2>Welcome to the Acme Museum of Art</h2>
+    <p>Explore centuries of creativity and human expression through our vast collection of masterpieces.</p>
+    <div class="intro-buttons">
+      <a href="#" id="viewVisitBtn" class="button-84">Plan Your Visit</a>
+      <a href="#" id="viewGalleryBtn" class="button-84">View Gallery</a>
+    </div>
+  </div>
+
+  <!-- Título de la Galería -->
+  <div class="gallery-title-container">
+    <h2 class="gallery-title">Art-Gallery</h2>
+  </div>
+
+  <!-- Sección de la galería -->
+  <div class="gallery" id="galeria">
+    <div class="gallery-item">
+      <div class="image-container">
+        <img src="/imagenes/ElGrito.jpg" alt="Arte 1" class="gallery-image">
+        <div class="info">
+          <h3>El Grito</h3>
+          <p>Hecha por: Edvard Munch </p>
+        </div>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <div class="image-container">
+        <img src="/imagenes/MonaLisa.jpg" alt="Arte 2" class="gallery-image">
+        <div class="info">
+          <h3>La Mona Lisa</h3>
+          <p>Hecha por: Leonardo Da Vinci </p>
+        </div>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <div class="image-container">
+        <img src="/imagenes/NocheEstrellada.jpg" alt="Arte 3" class="gallery-image">
+        <div class="info">
+          <h3>La Noche Estrellada</h3>
+          <p>Hecha por: Vincent VanGoh</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sección de visita -->
+  <div class="visit" id="visita">
+    <h2>Plan Your Visit</h2>
+    <div class="visit-boxes">
+      <div class="visit-box">
+        <h3>Opening Hours</h3>
+        <p>Monday - Friday: 10 AM - 6 PM<br>Saturday - Sunday: 11 AM - 5 PM</p>
+      </div>
+      <div class="visit-box">
+        <h3>Location</h3>
+        <p>123 Art Street, Art City, AC 12345</p>
+      </div>
+      <div class="visit-box">
+        <h3>Current Exhibition</h3>
+        <p>Featuring the works of modern artists from around the world.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal para imágenes ampliadas -->
+  <div id="modal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modal-image">
+  </div>
+
+  <!-- Footer -->
+  <footer>@ 2024 CampusLands. All rights reserved | Terms of Service | Privacy</footer>
+
+</body>
+</html>

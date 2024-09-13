@@ -1,0 +1,393 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Contenedor para el título y la barra de navegación */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #333;
+    color: white;
+    position: relative;
+}
+
+.title {
+    margin: 0;
+    font-size: 2rem;
+    text-align: left;
+}
+
+/* Botón del menú desplegable */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Estilos de la barra de navegación */
+.navbar {
+    position: relative;
+}
+
+.nav-menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-menu li {
+    display: inline;
+}
+
+.nav-menu li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    padding: 8px 16px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-menu li a:hover {
+    background-color: #575757;
+    border-radius: 4px;
+}
+
+/* Estilos de la galería */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    padding: 20px;
+    margin-top: 5rem;
+    text-align: center;
+}
+
+.gallery-title-container {
+    margin-top: 3rem;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.gallery-title {
+    font-size: 2rem;
+    margin: 0;
+}
+
+/* Contenedor de la imagen y la información */
+.image-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+/* Imagen de la galería */
+.gallery-image {
+    width: 100%;
+    height: auto;
+    transition: transform 0.6s ease;
+}
+
+/* Contenedor de la información */
+.info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro con opacidad */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Efecto de voltear la imagen */
+.image-container:hover .gallery-image {
+    transform: rotateY(180deg);
+}
+
+/* Mostrar información al pasar el ratón */
+.image-container:hover .info {
+    opacity: 1;
+}
+
+/* Estilos de la información */
+.info h3 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.info p {
+    margin: 10px 0 0;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    max-width: 80%;
+    max-height: 80%;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover, .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Footer sticky */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* CSS para los botones */
+.button-85 {
+    --b: 3px;
+    --s: .45em;
+    --color: white;
+
+    padding: calc(.5em + var(--s)) calc(.9em + var(--s));
+    color: var(--color);
+    --_p: var(--s);
+    background:
+        conic-gradient(from 90deg at var(--b) var(--b),#0000 90deg,var(--color) 0)
+        var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+    transition: .3s linear, color 0s, background-color 0s;
+    outline: var(--b) solid #0000;
+    outline-offset: .6em;
+    font-size: 16px;
+
+    border: 0;
+
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.button-85:hover,
+.button-85:focus-visible {
+    --_p: 0px;
+    outline-color: var(--color);
+    outline-offset: .05em;
+}
+
+.button-85:active {
+    background: var(--color);
+    color: #fff;
+}
+
+/* Contenedor para la introducción */
+.inicio {
+    position: relative;
+    padding: 50px;
+    text-align: center;
+    color: white;
+}
+
+.inicio::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+}
+
+.inicio h2,
+.inicio p,
+.intro-buttons {
+    position: relative;
+    z-index: 1;
+    padding: 10px;
+}
+
+/* Estilos para la imagen de fondo */
+.inicio {
+    background-image: url('/imagenes/_98d80f24-843f-4350-bc92-056109737b52.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.intro-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 1px;
+}
+
+/* Estilos del botón */
+.button-84 {
+    --b: 3px;
+    --s: .45em;
+    --color: white;
+    padding: calc(.5em + var(--s)) calc(.9em + var(--s));
+    color: var(--color);
+    background: #333;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    user-select: none;
+}
+
+.button-84:hover {
+    background-color: #575757;
+}
+
+/* Contenedor del título de la galería */
+.gallery-title-container {
+    margin-top: 3rem;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Título de la Galería */
+.gallery-title {
+    font-size: 2rem;
+    margin: 0;
+}
+
+/* Estilo para la sección de visita */
+.visit {
+    padding: 20px;
+    background-color: #f9f9f9; /* Color de fondo opcional */
+    margin-top: 20rem;
+    margin-bottom: 3rem;
+}
+
+.visit h2 {
+    padding: 2rem;
+}
+
+/* Contenedor de las cajitas */
+.visit-boxes {
+    display: flex;
+    justify-content: space-between; /* Distribuye las cajitas */
+    gap: 20px; /* Espacio entre las cajitas */
+}
+
+/* Estilo de cada cajita */
+.visit-box {
+    flex: 1; /* Cada cajita ocupa el mismo espacio */
+    padding: 20px;
+}
+
+.visit-box h3 {
+    margin-top: 0;
+    color: #333; /* Color del texto del título */
+}
+
+.visit-box p {
+    color: #666; /* Color del texto del contenido */
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .navbar {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        background-color: #333;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 10px 0;
+        z-index: 1;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-menu li {
+        margin: 10px 0;
+    }
+
+    .nav-menu li a {
+        font-size: 1.5rem;
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 425px) {
+    .gallery-title {
+        font-size: 1.5rem;
+    }
+
+    .visit-box {
+        padding: 10px;
+    }
+
+    .visit-box h3 {
+        font-size: 1.2rem;
+    }
+
+    .visit-box p {
+        font-size: 0.9rem;
+    }
+}
